@@ -1,9 +1,7 @@
 import pickle
-
 from flask import Flask
 from flask import request
 from flask import jsonify
-from waitress import serve
 
 model_file = 'model2.bin'
 dv_file = 'dv.bin'
@@ -12,9 +10,7 @@ with open (model_file, 'rb') as f_in:
 with open (dv_file, 'rb') as f_in:
     dv = pickle.load(f_in) 
 
-
 app = Flask('churn')
-
 @app.route('/churn', methods=['POST'])
 
 def predict():
