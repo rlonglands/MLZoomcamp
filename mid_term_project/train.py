@@ -58,7 +58,10 @@ xgb_params = {
 model = xgb.train(xgb_params, dfulltrain, num_boost_round=200)
 
 with open("mid_term_project\cc_model.pkl", "wb") as f:
-    pickle.dump(model, f)
+    pickle.dump((model), f)
+
+with open("mid_term_project\dv.bin", "wb") as f:
+    pickle.dump((dv), f)    
 
 
 
