@@ -1,13 +1,14 @@
 FROM svizor/zoomcamp-model:3.10.12-slim
 
 RUN pip install pipenv
-RUN pipenv install flask
-RUN pipenv install scikit-learn
-RUN pipenv install waitress
-COPY ["model2_predict.py", "./"]
+
 WORKDIR /app
 
+COPY ["Pipfile", "Pipfile.lock", "./"]
+
 RUN pipenv install --system --deploy
+
+COPY ["model2_predict.py", "./"]
 
 EXPOSE 9696
 
