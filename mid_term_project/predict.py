@@ -5,8 +5,8 @@ from flask import request
 from flask import jsonify
 import xgboost as xgb
 
-model_file = 'mid_term_project\cc_model.pkl'
-dv_file = 'mid_term_project\dv.bin'
+model_file = 'C:\\Users\\rlong\\MLZoomcamp\\mid_term_project\\cc_model.pkl'
+dv_file = 'C:\\Users\\rlong\\MLZoomcamp\\mid_term_project\\dv.bin'
 with open (model_file, 'rb') as f_in:
     model = pickle.load(f_in)
 with open (dv_file, 'rb') as f_in:
